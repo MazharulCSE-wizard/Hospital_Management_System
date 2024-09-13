@@ -14,7 +14,7 @@
         <main>
             <h1>Create New Account:</h1>
             <fieldset>
-                <form action="">
+                <form action="/doctor" id="doctor_form" method="POST">
                     <p>
                         <label for="Dname">Name:</label>
                         <input type="text" name="Dname" id="Dname">
@@ -43,8 +43,8 @@
                         <input type="email" name="Demail" id="Demail" placeholder="john.gray10@gmail.com">
                     </p>
                     <p>
-                        <label for="Password">Password :</label>
-                        <input type="password" name="Password" id="Password">
+                        <label for="Dpassword">Password :</label>
+                        <input type="password" name="Dpassword" id="Dpassword">
                     </p>
                     <p>
                         <label for="Specialization">Specialization:</label>
@@ -52,6 +52,7 @@
                     </p>
                 </form>
             </fieldset>
+            <button form="doctor_form" type="submit">Submit</button>
         </main>
     </body>
 </html>
