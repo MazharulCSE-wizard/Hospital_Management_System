@@ -8,3 +8,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 //Create database
+app.post('/doctor',(req,res)=>{
+    
+})

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="D_login.css" type="text/css">
+        <link rel="icon" href="\Hospital_MS\healthcare1.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header class="top_bar">
+            <img src="\Hospital_MS\healthcare1.ico" alt="Logo" class="logo">
+            <h1 class="heading">JAMT BD Online Hospital Service</h1>
+        </header>
+        <main>
+            <h1>Create New Account:</h1>
+            <fieldset>
+                <form action="">
+                    <p>
+                        <label for="Dname">Name:</label>
+                        <input type="text" name="Dname" id="Dname">
+                    </p>
+                    <p>
+                        <label for="Dage">Age:</label>
+                        <input type="number" name="Dage" id="Dage" min="25" max="70">
+                    </p>
+                    <p>
+                        Gender :
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="male">Male</label>
+                    
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Female</label>
+                    
+                        <input type="radio" name="gender" id="other" value="other">
+                        <label for="other">Other</label>
+                    </p>
+                    <p>
+                        <label for="Dmobile">Phone number:</label>
+                        <input type="tel" name="Dmobile" id="Dmobile">
+                    </p>
+                    <p>
+                        <label for="Demail">Email :</label>
+                        <input type="email" name="Demail" id="Demail" placeholder="john.gray10@gmail.com">
+                    </p>
+                    <p>
+                        <label for="Password">Password :</label>
+                        <input type="password" name="Password" id="Password">
+                    </p>
+                    <p>
+                        <label for="Specialization">Specialization:</label>
+                        <input type="text" name="Specialization" id="Specialization">
+                    </p>
+                </form>
+            </fieldset>
+        </main>
+    </body>
+</html>
