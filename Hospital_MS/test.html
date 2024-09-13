@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center Divs</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;  /* Full height of the viewport */
+    }
+
+    .div-group {
+      display: flex;
+      gap: 20px; /* Space between the divs */
+    }
+
+    .div-group > div {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="div-group">
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <div>Div 4</div>
+  </div>
+</div>
+
+</body>
+</html>
