@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const patientRoutes = require('./routes/patient');
+const patientRoutes = require('./patient');
 
 app.use(express.json());
 

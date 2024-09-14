@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db');
+const bodyParser
+const db = require('./db');
 //CREATE 
 router.post('/add', (req, res) => {
-    const { P_id, P_name, P_gender, P_address, P_age, P_password, P_mobile, P_email } = req.body;    
+    const [ P_id, P_name, P_gender, P_address, P_age, P_password, P_mobile, P_email ] = req.body;    
     const query = `INSERT INTO Patient (P_id, P_name, P_gender, P_address, P_age, P_password, P_mobile, P_email) 
                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
     db.query(query, [P_id, P_name, P_gender, P_address, P_age, P_password, P_mobile, P_email], (err, result) => {
