@@ -18,26 +18,27 @@ db.connect((err) => {
 });
 
 const register = async (req, res) => {
-    const { name, age, gender, mobile, email, password, cpass, hname, spec } = req.body;
-    console.log(name)
+    const { Dname, Dage, gender, Dmobile, Demail, Dpassword, Dcpassword, hname, Specialization } = req.body;
+    console.log(Dname)
 
     // Check for missing fields
-    if (!name || !age || !gender || !mobile || !email || !password || !cpass || !hname || !spec) {
+    if (!Dname || !Dage || !gender || !Dmobile || !Demail || !Dpassword || !Dcpassword || !hname || !Specialization) {
         return res.status(400).send('Please fill out all information.');
     }
 
     // Check if password and confirm password match
-    if (password !== cpass) {
+    if (Dpassword !== Dcpassword) {
         return res.status(401).send('Password and confirm password do not match.');
     }
 
     try {
         // Encrypt the password asynchronously
-        const encrypt_pass = await bcrypt.hash(password, 10);
+        const encrypt_pass = await bcrypt.hash(Dpassword, 10);
 
         // Check if hospital exists and get the hospital ID
-        const sql = "SELECT `H_id` FROM `hospital` WHERE `H_name` = ?";
+        const sql = "SELECT `H_id` FROM `hospital` WHERE `H_name` = ? ";
         db.execute(sql, [hname], (err, result) => {
+            console.log(result)
             if (err) {
                 return res.status(500).send('Error querying hospital.');
             }
@@ -46,13 +47,13 @@ const register = async (req, res) => {
 
                 // Insert doctor into the database
                 const sql2 = "INSERT INTO `doctor`(`D_name`, `D_age`, `D_gender`, `D_mobile`, `D_email`, `D_password`, `Specialization`, `H_id`) VALUES (?,?,?,?,?,?,?,?)";
-                db.execute(sql2, [name, age, gender, mobile, email, encrypt_pass, spec, hid], (err, results) => {
+                db.execute(sql2, [Dname, Dage, gender, Dmobile, Demail,encrypt_pass,Specialization,hid], (err, results) => {
                     if (err) {
                         return res.status(500).send('Error inserting doctor.');
                     }
 
                     // JWT Generation
-                    const tokenPayload = {name:name,email:email, id: results.insertId };  // Adjust payload as needed
+                    const tokenPayload = {name:Dname,email:Demail, id: results.insertId };  // Adjust payload as needed
                     const token = jwt.sign(tokenPayload, secret, { expiresIn: '1d' });
 
                     // Set the JWT as a cookie
