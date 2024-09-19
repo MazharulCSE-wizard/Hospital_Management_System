@@ -6,6 +6,7 @@ var upload = multer();
 const app = express();
 const port = process.env.PORT || 3000;
 
+
 // Middleware to handle URL-encoded form data and JSON data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
