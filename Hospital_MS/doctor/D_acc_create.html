@@ -14,7 +14,7 @@
         <main>
             <h1>Create New Account:</h1>
             <fieldset>
-                <form action="http://127.0.0.1:3000/doctor" id="doctor_form" method="POST">
+                <form action="http://127.0.0.1:3500/createdoctor" id="doctor_form" method="POST">
                     <p>
                         <label for="Dname">Name:</label>
                         <input type="text" name="Dname" id="Dname">
@@ -24,15 +24,8 @@
                         <input type="number" name="Dage" id="Dage" min="25" max="70">
                     </p>
                     <p>
-                        Gender :
-                        <input type="radio" name="gender" id="male" value="male">
-                        <label for="male">Male</label>
-                    
-                        <input type="radio" name="gender" id="female" value="female">
-                        <label for="female">Female</label>
-                    
-                        <input type="radio" name="gender" id="other" value="other">
-                        <label for="other">Other</label>
+                        <label for="gender">Gender:</label>
+                        <input type="text" name="gender" id="gender">
                     </p>
                     <p>
                         <label for="Dmobile">Phone number:</label>
@@ -45,6 +38,14 @@
                     <p>
                         <label for="Dpassword">Password :</label>
                         <input type="password" name="Dpassword" id="Dpassword">
+                    </p>
+                    <p>
+                        <label for="Dcpassword">Confirm Password :</label>
+                        <input type="password" name="Dcpassword" id="Dcpassword">
+                    </p>
+                    <p>
+                        <label for="hname">Hospital Name:</label>
+                        <input type="text" name="hname" id="hname">
                     </p>
                     <p>
                         <label for="Specialization">Specialization:</label>
