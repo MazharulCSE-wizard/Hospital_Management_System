@@ -2,8 +2,13 @@ const express = require('express')
 const patient = require("../Controllers/PatientController");
 const router = express.Router()
 
+//CREATE
 router.post("/", patient.create)
-router.get("/", patient.read)
-router.put("/", patient.update)
-router.delete("/", patient.del)
+//READ
+router.get("/:id", patient.read)
+//UPDATE
+router.put("/:id", patient.update)
+//DELETE
+router.delete("/:id", patient.del)
+
 module.exports = router;
