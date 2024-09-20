@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/P_dashboard.css">
+    <link rel="icon" href="icon/healthcare1.ico" type="image/x-icon">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="top_bar">
+        <img src="icon/healthcare1.ico" alt="Logo" class="logo">
+        <h1 class="heading">JAMT BD Online Hospital Service</h1>
+    </header>
+    <main>
+        <h2 id="doctor">Welcome <%= name %></h2>
+        <style>
+            body {
+                background-color: rgb(255, 255, 255);
+            }
+            #docinfo {
+                color: rgb(0, 0, 0);
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.5rem;
+            }
+        </style>
+        <h4 id="heading4">Your Profile:</h4>
+        <div id="docinfo">
+            <ul>
+                <li>Your name: <%= name %></li>
+                <li>Your Age: <%= age %></li>
+                <li>Your Gender: <%= gender %></li>
+                <li>Your Phone Number: <%= mobile %></li>
+                <li>Your Email: <%= email %></li>
+            </ul>
+        </div>
+        
+        <h2>Update Account:</h2>
+        <form id="update" action="/api/recipient/<%= id %>" method="PUT">
+            <label for="R_name">Name:</label>
+            <input type="text" name="R_name" id="R_name" required>
+            
+            <label for="R_age">Age:</label>
+            <input type="number" name="R_age" id="R_age" min="1" max="100" required>
+            
+            <label>Gender:</label>
+            <input type="radio" name="R_gender" value="Male" required> Male
+            <input type="radio" name="R_gender" value="Female"> Female
+            <input type="radio" name="R_gender" value="Other"> Other
+            
+            <label for="R_mobile">Phone number:</label>
+            <input type="tel" name="R_mobile" id="R_mobile" required>
+            
+            <label for="R_email">Email:</label>
+            <input type="email" name="R_email" id="R_email" placeholder="john.gray10@gmail.com" required>
+            
+            <label for="R_password">Password:</label>
+            <input type="password" name="R_password" id="R_password" required>
+            
+            <button type="submit">Update</button>
+        </form>
+
+        <h2>Delete Account:</h2>
+        <form id="delete" action="/api/recipient/<%= id %>" method="DELETE">
+            <label for="R_email">Email:</label>
+            <input type="email" name="R_email" id="R_email" placeholder="john.gray10@gmail.com" required>
+            
+            <label for="R_password">Password:</label>
+            <input type="password" name="R_password" id="R_password" required>
+            
+            <button type="submit">Delete Account</button>
+        </form>
+
+        <style>
+            #new {
+                color: rgb(0, 0, 0);
+                text-align: center;
+                font-size: 2rem;
+            }
+            #heading4 {
+                color: rgb(0, 0, 0);
+                margin-left: 20rem;
+                font-size: 20px;
+            }
+        </style>
+    </main>
+</body>
+</html>
