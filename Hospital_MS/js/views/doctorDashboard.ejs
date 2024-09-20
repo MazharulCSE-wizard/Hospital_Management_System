@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/doctordash.css">
+        <link rel="icon" href="icon/healthcare1.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header class="top_bar">
+            <img src="icon/healthcare1.ico" alt="Logo" class="logo">
+            <h1 class="heading">JAMT BD Online Hospital Service</h1>
+        </header>
+        <main>
+            <h2 id="doctor">Welcome Dr.<%= name %></h2>
+            <style>
+                body{
+                    background-color:black;
+                }
+                #doctor{
+                    color:whitesmoke;
+                    text-align: center;   
+                    margin-top: 20px;     
+                    font-size: 3rem;     
+                }
+            </style>
+            <h3 id="new">Grab a coffee ☕ and start treating for humanity</h3>
+            <h4 id="heading4">Your Profile:</h4>
+            <div id="docinfo">
+                <ul>
+                    <li>Your name: <%= name  %></li><br>
+                    <li>Your Age: <%= age  %></li><br>
+                    <li>Your Gender: <%= gender  %></li><br>
+                    <li>Your Phone Number: <%= mobile  %></li><br>
+                    <li>Your Email: <%= email  %></li><br>
+                    <li>Specialization: <%= expertise  %></li>
+                </ul>
+            </div>
+            <form id="update" action="http://127.0.0.1:3500/updatedoc" method="POST">
+                
+
+            </form>
+            <style>
+                #new{
+                    color:blue;
+                    text-align: center;
+                    font-size: 2rem;
+                }
+                #heading4{
+                    color:whitesmoke;
+                    margin-left: 20rem;
+                    font-size: 20px;
+                    
+                }
+                #docinfo{
+                    color:whitesmoke;
+                    margin-left: 20rem;
+                    font-size: 20px;                   
+                }
+            </style>
+        </main>
+        
+        

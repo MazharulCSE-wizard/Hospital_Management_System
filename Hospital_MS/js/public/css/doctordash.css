@@ -1,0 +1,53 @@
+/* Basic reset for body and margin */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the top bar */
+.top_bar {
+    background-color:rgb(21, 114, 214); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 10px; 
+    position: relative; 
+}
+
+/* Style for the logo */
+.logo {
+    height: 6rem;   
+}
+
+/* Style for the heading */
+.heading {
+    background: linear-gradient(white, gray);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; 
+}
+
+.container{
+    display: flex; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-top: 5rem;
+    margin-left: 26rem;
+    margin-right: 18rem;
+}
+
+
+
+/* .box{
+    border: 2px solid black;
+    padding: 10px; 
+    width: 250px; 
+    height: 250px;
+} */
+
+footer{
+    background-color:rgb(21, 114, 214); 
+    padding: 50px; 
+}

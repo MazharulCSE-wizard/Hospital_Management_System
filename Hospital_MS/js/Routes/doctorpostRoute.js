@@ -4,4 +4,5 @@ const router = express.Router()
 
 router.post("/", createDoctor.register)
 
+
 module.exports = router;

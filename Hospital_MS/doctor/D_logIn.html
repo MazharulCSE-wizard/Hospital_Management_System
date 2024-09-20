@@ -14,18 +14,18 @@
         <main>
             <fieldset>
                 <legend>Recipient login :</legend>
-                <form id="send">
+                <form id="log_indoctor" action="http://127.0.0.1:3500/doctorlogin" method="POST" enctype="application/x-www-form-urlencoded">
                     <p>
-                        <label for="Username">Username:</label>
-                        <input type="text" name="Username" id="Username">
+                        <label for="demail">Email:</label>
+                        <input type="text" name="demail" id="demail">
                     </p>
                     <p>
-                        <label for="Password">Password:</label>
-                        <input type="password" name="Password" id="Password">
+                        <label for="dpassword">Password:</label>
+                        <input type="password" name="dpassword" id="dpassword">
                     </p>
                 </form>
             </fieldset>
-            <button form="send" type="submit">Send</button>
+            <button form="log_indoctor" type="submit">LogIn</button>
             <p><strong>If you don't have account, create new account:</strong></p>
             <p><a href="D_acc_create.html">Create new account as doctor</a></p>
         </main>
