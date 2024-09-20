@@ -27,6 +27,20 @@ app.use("/doctorlogin", require("../js/Routes/DoctorLoginroute"), (req, res, nex
     next();
 });
 
+app.use('/patient', require("../js/Routes/patientCRUDRoute"), (req, res, next) => {
+    console.log(`Request received: ${req.method} : ${req.url}`);
+    next();
+});
+
+app.use("/logIN", require("../js/Routes/patientLogIn"), (req, res, next) => {
+    console.log(`Login Request received: ${req.method} : ${req.url}`);
+    next();
+});
+
+app.get('/P_logIn', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'patient', 'P_logIn.html'));
+});
+
 app.listen(port, () => {
     console.log(`Server running successfully on ${port}`);
 });
