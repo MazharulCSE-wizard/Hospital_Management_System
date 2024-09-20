@@ -1,46 +1,57 @@
 <!DOCTYPE html>
-<html>    
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Management</title>
+    <link rel="stylesheet" href="P_login.css" type="text/css">
+    <link rel="icon" href="/hms/healthcare1.ico" type="image/x-icon">
+    <title>Create Patient Account</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Sign up as Patient</h2>
-        <form id="patientForm" action="/patient" method="post">
-            <div class="form-group">
-                <label for="P_name">Name</label>
-                <input type="text" class="form-control" id="P_name" name="P_name" required>
-            </div>
-            <div class="form-group">
-                <label for="P_gender">Gender</label>
-                <input type="text" class="form-control" id="P_gender" name="P_gender" required>
-            </div>
-            <div class="form-group">
-                <label for="P_address">Address</label>
-                <input type="text" class="form-control" id="P_address" name="P_address" required>
-            </div>
-            <div class="form-group">
-                <label for="P_age">Age</label>
-                <input type="number" class="form-control" id="P_age" name="P_age" required>
-            </div>
-            <div class="form-group">
-                <label for="P_mobile">Mobile</label>
-                <input type="text" class="form-control" id="P_mobile" name="P_mobile" required>
-            </div>
-            <div class="form-group">
-                <label for="P_email">Email</label>
-                <input type="email" class="form-control" id="P_email" name="P_email" required>
-            </div>
-            <div class="form-group">
-                <label for="P_password">Password</label>
-                <input type="password" class="form-control" id="P_password" name="P_password" required>
-            </div>
-            <button type="submit" form="patientForm">Submit</button>
-        </form>
-
-        <div id="response"></div>
-    </div>
+    <header class="top_bar">
+        <img src="/hms/healthcare1.ico" alt="Logo" class="logo">
+        <h1 class="heading">JAMT BD Online Hospital Service</h1>
+    </header>
+    <main>
+        <h1>Create New Account:</h1>
+        <fieldset>
+            <form action="http://127.0.0.1:3500/patient" id="patient_form" method="POST">
+                <p>
+                    <label for="P_name">Name:</label>
+                    <input type="text" name="P_name" id="P_name" required>
+                </p>
+                <p>
+                    <label for="P_age">Age:</label>
+                    <input type="number" name="P_age" id="P_age" min="1" max="100" required>
+                </p>
+                <p>
+                    Gender:
+                    <input type="radio" name="P_gender" id="male" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="P_gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="P_gender" id="other" value="other">
+                    <label for="other">Other</label>
+                </p>
+                <p>
+                    <label for="P_mobile">Phone number:</label>
+                    <input type="tel" name="P_mobile" id="P_mobile" required>
+                </p>
+                <p>
+                    <label for="P_email">Email:</label>
+                    <input type="email" name="P_email" id="P_email" placeholder="john.gray10@gmail.com" required>
+                </p>
+                <p>
+                    <label for="P_password">Password:</label>
+                    <input type="password" name="P_password" id="P_password" required>
+                </p>
+                <p>
+                    <label for="P_address">Address:</label>
+                    <input type="text" name="P_address" id="P_address" required>
+                </p>
+                <button type="submit">Create Account</button>
+            </form>
+        </fieldset>
+    </main>
 </body>
 </html>
