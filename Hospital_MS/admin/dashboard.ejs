@@ -1,0 +1,44 @@
+<!-- dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management Dashboard</title>
+</head>
+<body>
+    <h2>Hospitals</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Hospital ID</th>
+                <th>Hospital Name</th>
+                <th>Hospital Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% hospitals.forEach(hospital => { %>
+            <tr>
+                <td><%= hospital.H_id %></td>
+                <td><%= hospital.H_name %></td>
+                <td><%= hospital.H_address %></td>
+                <td>
+                    <form action="/updateHospital" method="POST">
+                        <input type="hidden" name="H_id" value="<%= hospital.H_id %>">
+                        <input type="text" name="H_name" value="<%= hospital.H_name %>">
+                        <input type="text" name="H_address" value="<%= hospital.H_address %>">
+                        <button type="submit">Update</button>
+                    </form>
+                    <form action="/deleteHospital" method="POST">
+                        <input type="hidden" name="H_id" value="<%= hospital.H_id %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
