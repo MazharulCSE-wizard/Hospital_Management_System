@@ -65,6 +65,11 @@ app.use("/logIN", require("../js/Routes/patientLogIn"), (req, res, next) => {
     next();
 });
 
+app.use("/adminController", require("../js/Routes/adminpostroutes"), (req, res, next) => {
+    console.log(`Request received: ${req.method} : ${req.url}`);
+    next();
+});
+
 app.get('/P_logIn', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'patient', 'P_logIn.html'));
 });
