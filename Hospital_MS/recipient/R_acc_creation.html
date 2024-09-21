@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Create Account</title>
+</head>
+<body>
+    <h2>Create Account</h2>
+    <form action="/api/recipient" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="R_name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" name="R_age" min="0" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="R_email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="R_password" required>
+        
+        <label for="test_fees">Test Fees:</label>
+        <input type="number" name="Test_fees" min="0" required>
+        
+        <label for="gender">Gender:</label>
+        <select name="R_gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <button type="submit">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</body>
+</html>
