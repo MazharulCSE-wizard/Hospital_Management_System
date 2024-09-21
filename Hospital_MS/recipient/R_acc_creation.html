@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Create Account</h1>
+    <form action="/api/register" method="POST">
+        <label for="R_name">Name:</label>
+        <input type="text" name="R_name" required>
+        <br>
+        <label for="R_age">Age:</label>
+        <input type="number" name="R_age" required>
+        <br>
+        <label for="R_gender">Gender:</label>
+        <select name="R_gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <br>
+        <label for="R_email">Email:</label>
+        <input type="email" name="R_email" required>
+        <br>
+        <label for="R_password">Password:</label>
+        <input type="password" name="R_password" required>
+        <br>
+        <label for="Test_fees">Test Fees:</label>
+        <input type="number" name="Test_fees" required>
+        <br>
+        <button type="submit">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="/">Login</a></p>
+</body>
+</html>

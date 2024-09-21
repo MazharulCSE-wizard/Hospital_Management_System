@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/P_dashboard.css">
+        <link rel="icon" href="icon/healthcare1.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header class="top_bar">
+            <img src="icon/healthcare1.ico" alt="Logo" class="logo">
+            <h1 class="heading">JAMT BD Online Hospital Service</h1>
+        </header>
+        <main>
+            <h2 id="patient">Welcome <%= name %></h2>
+            <style>
+                body{
+                    background-color:rgb(255, 255, 255);
+                }
+                #patient{
+                    color:rgb(255, 255, 255);
+                    text-align: center;   
+                    margin-top: 20px;     
+                    font-size: 3rem;     
+                }
+            </style>
+            <h4 id="heading4">Your Profile:</h4>
+            <div id="patientinfo">
+                <ul>
+                    <li>Your name: <%= name  %></li><br>
+                    <li>Your Age: <%= age  %></li><br>
+                    <li>Your Gender: <%= gender  %></li><br>
+                    <li>Your Phone Number: <%= mobile  %></li><br>
+                    <li>Your Email: <%= email  %></li><br>
+                </ul>
+            </div>
+            <h2>Update Account:</h2>
+            <form id="update" action="http://127.0.0.1:3500/patient" method="POST">
+                <p></p>
+                    <label for="P_name">Name:</label>
+                    <input type="text" name="P_name" id="P_name" required>
+                </p>
+                <p>
+                    <label for="P_age">Age:</label>
+                    <input type="number" name="P_age" id="P_age" min="1" max="100" required>
+                </p>
+                <p>
+                    Gender:
+                    <input type="radio" name="P_gender" id="male" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="P_gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="P_gender" id="other" value="other">
+                    <label for="other">Other</label>
+                </p>
+                <p>
+                    <label for="P_mobile">Phone number:</label>
+                    <input type="tel" name="P_mobile" id="P_mobile" required>
+                </p>
+                <p>
+                    <label for="P_email">Email:</label>
+                    <input type="email" name="P_email" id="P_email" placeholder="john.gray10@gmail.com" required>
+                </p>
+                <p>
+                    <label for="P_password">Password:</label>
+                    <input type="password" name="P_password" id="P_password" required>
+                </p>
+                <p>
+                    <label for="P_address">Address:</label>
+                    <input type="text" name="P_address" id="P_address" required>
+                </p>
+                <button type="submit">Change</button>
+            </form>
+            <h2>Delete Account:</h2>
+            <form id="update" action="http://127.0.0.1:3500/patient" method="DELETE">
+                <p></p>
+                    <label for="P_name">Name:</label>
+                    <input type="text" name="P_name" id="P_name" required>
+                </p>
+                <p>
+                    <label for="P_age">Age:</label>
+                    <input type="number" name="P_age" id="P_age" min="1" max="100" required>
+                </p>
+                <p>
+                    Gender:
+                    <input type="radio" name="P_gender" id="male" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="P_gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="P_gender" id="other" value="other">
+                    <label for="other">Other</label>
+                </p>
+                <p>
+                    <label for="P_mobile">Phone number:</label>
+                    <input type="tel" name="P_mobile" id="P_mobile" required>
+                </p>
+                <p>
+                    <label for="P_email">Email:</label>
+                    <input type="email" name="P_email" id="P_email" placeholder="john.gray10@gmail.com" required>
+                </p>
+                <p>
+                    <label for="P_password">Password:</label>
+                    <input type="password" name="P_password" id="P_password" required>
+                </p>
+                <p>
+                    <label for="P_address">Address:</label>
+                    <input type="text" name="P_address" id="P_address" required>
+                </p>
+                <button type="submit">Delete</button>
+            </form>
+            <style>
+                #new{
+                    color:rgb(0, 0, 0);
+                    text-align: center;
+                    font-size: 2rem;
+                }
+                #heading4{
+                    color:rgb(0, 0, 0);
+                    margin-left: 20rem;
+                    font-size: 20px;
+                    
+                }
+                #patientinfo{
+                    color:rgb(6, 6, 6);
+                    margin-left: 20rem;
+                    font-size: 20px;                   
+                }
+            </style>
+        </main>
+        
+        

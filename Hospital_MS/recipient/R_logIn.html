@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="R_logIn.css" type="text/css">
-        <link rel="icon" href="\Hospital_MS\healthcare1.ico" type="image/x-icon">
-    </head>
-    <body>
-        <header class="top_bar">
-            <img src="\Hospital_MS\healthcare1.ico" alt="Logo" class="logo">
-            <h1 class="heading">JAMT BD Online Hospital Service</h1>
-        </header>
-        <main>
-            <fieldset>
-                <legend>Recipient login :</legend>
-                <form action="">
-                    <label for="Username">Username</label>
-                    <input type="text">
-                </form>
-            </fieldset>
-        </main>
-    </body>
- 
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/api/login" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="R_email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="R_password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="create_account.html">Create Account</a></p>
+</body>
 </html>
