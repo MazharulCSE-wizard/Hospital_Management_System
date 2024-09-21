@@ -50,6 +50,7 @@ const login = async (req, res) => {
                 const token = jwt.sign({name: result2[0].D_name,gender: result2[0].D_gender,email: result2[0].D_email},secret,{ expiresIn: '1d' });
                 res.cookie("auth_token",token,{maxAge:24*60*60*1000, httponly:true})
                 const data = {
+                    id:result2[0].D_id,
                     name:result2[0].D_name,
                     age:result2[0].D_age,
                     gender:result2[0].D_gender,
@@ -68,4 +69,38 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { login };
+
+const middleware = (req, res, next) => {
+    const token = req.cookies.auth_token; // Ensure the correct cookie is accessed
+
+    if (!token) {
+        return res.redirect("http://127.0.0.1:5500/Hospital_MS/doctor/D_logIn.html");
+    }
+
+    jwt.verify(token, secret, (err, decoded) => {
+        if (err) {
+            return res.redirect("http://127.0.0.1:5500/Hospital_MS/doctor/D_logIn.html");
+        }
+        req.id = decoded.id; // Ensure this matches what you encode in the token
+        next();
+    });
+};
+
+const logout = async(req,res)=>{
+    res.clearCookie('auth_token');
+    res.redirect("http://127.0.0.1:5500/Hospital_MS/doctor/D_logIn.html")
+}
+
+const deleteUser = async(req,res)=>{
+    const id = req.params.id;
+    sql="DELETE FROM `doctor` WHERE `D_id`=?"
+    db.execute(sql,[id],(err,result)=>{
+        if (err){
+            res.status(500).send("Error Deleting query")
+        }
+        console.log(result)
+        res.clearCookie('auth_token');
+        res.redirect("http://127.0.0.1:5500/Hospital_MS/doctor/D_logIn.html")
+    })
+}
+module.exports = { middleware, login ,logout,deleteUser};

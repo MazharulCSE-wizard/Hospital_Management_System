@@ -36,9 +36,14 @@
                     <li>Specialization: <%= expertise  %></li>
                 </ul>
             </div>
-            <form id="update" action="http://127.0.0.1:3500/updatedoc" method="POST">
-                
-
+            <form id="update" action="http://127.0.0.1:3500/updatedoc/read/<%=id%>" method="GET">
+                <button type="submit">Edit</button>
+            </form>
+            <form id="logout" action="http://127.0.0.1:3500/logout/logout/<%=id%>" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+            <form id="delete" action="http://127.0.0.1:3500/delete/delete/<%=id%>" method="POST">
+                <button type="submit">Delete</button>
             </form>
             <style>
                 #new{
@@ -59,5 +64,6 @@
                 }
             </style>
         </main>
-        
+</body>
+</html>    
         

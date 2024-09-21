@@ -18,3 +18,7 @@ password:rty123
 email:aminul.islam2@gmail.com
 password:yui456
 }
+{
+email:mominur.rahman54@gmail.com
+password:wer123
+}
